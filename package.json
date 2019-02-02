@@ -1,0 +1,34 @@
+{
+  "name": "nodemailer-pdf",
+  "version": "1.0.0",
+  "description": "Testing dynamic PDF attachment using nodemailer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidsbrmnn/nodemailer-pdf.git"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "html-pdf",
+    "nodemailer"
+  ],
+  "author": "Siddharth Subramanian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sidsbrmnn/nodemailer-pdf/issues"
+  },
+  "homepage": "https://github.com/sidsbrmnn/nodemailer-pdf#readme",
+  "dependencies": {
+    "config": "^3.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "html-pdf": "^2.2.0",
+    "nodemailer": "^5.1.1"
+  },
+  "devDependencies": {}
+}
