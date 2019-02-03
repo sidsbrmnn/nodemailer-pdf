@@ -4,6 +4,7 @@ const config = require("config");
 const fs = require("fs");
 const ejs = require("ejs");
 const pdf = require("html-pdf");
+const validate = require("../models/validate");
 
 const router = express.Router();
 
@@ -18,13 +19,17 @@ const transporter = nodemailer.createTransport({
 });
 
 router.post("/", async (req, res) => {
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
   let html = await ejs.renderFile("public/sample-template.ejs", {
     name: req.body.name
   });
   pdf.create(html).toFile("public/foo.pdf", (err, filepath) => {
     if (err) throw err;
   });
-  let mailOptions = {
+
+  await transporter.sendMail({
     from: `"Test Mailer Bot" <${config.get("username")}>`,
     to: req.body.email,
     subject: "PDF attachment test mail",
@@ -35,8 +40,7 @@ router.post("/", async (req, res) => {
         path: "public/foo.pdf"
       }
     ]
-  };
-  await transporter.sendMail(mailOptions);
+  });
 
   res.status(200).send("Mail sent.");
 });
