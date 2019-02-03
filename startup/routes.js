@@ -1,7 +1,9 @@
 const express = require("express");
-const home = require("../routes/home");
+const mail = require("../routes/mail");
+const error = require("../middleware/error");
 
 module.exports = function(app) {
   app.use(express.json());
-  app.use("/", home);
+  app.use("/api/mail", mail);
+  app.use(error);
 };
