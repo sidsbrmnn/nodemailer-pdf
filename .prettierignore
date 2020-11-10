@@ -1,0 +1,6 @@
+node_modules
+.editorconfig
+.gitignore
+.prettierignore
+package-lock.json
+package.json

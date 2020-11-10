@@ -1,37 +1,39 @@
 {
   "name": "nodemailer-pdf",
   "version": "1.0.0",
-  "description": "Testing dynamic PDF attachment using nodemailer",
+  "description": "Nodemailer attachment with PDF dynamically created using html-pdf",
   "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "handlebars": "^4.7.6",
+    "html-pdf": "^2.2.0",
+    "joi": "^17.3.0",
+    "nodemailer": "^6.4.15"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  },
   "scripts": {
-    "start": "node index.js",
+    "start": "node .",
+    "dev": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sidsbrmnn/nodemailer-pdf.git"
   },
-  "keywords": [
-    "express",
-    "ejs",
-    "html-pdf",
-    "nodemailer"
-  ],
-  "author": "Siddharth Subramanian",
+  "keywords": [],
+  "author": "Siddharth Subramanian <sidsbrmnn@gmail.com> (https://sidsbrmnn.github.io/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sidsbrmnn/nodemailer-pdf/issues"
   },
-  "homepage": "https://github.com/sidsbrmnn/nodemailer-pdf#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.0.0",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "html-pdf": "^2.2.0",
-    "joi": "^14.3.1",
-    "nodemailer": "^5.1.1",
-    "winston": "^2.4.0"
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/sidsbrmnn/nodemailer-pdf#readme"
 }
